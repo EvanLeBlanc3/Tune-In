@@ -1,0 +1,16 @@
+{
+  "name": "Tune In",
+  "short_name": "Tune In",
+  "description": "A pixel-perfect retro MP3 player for your own music.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#16202d",
+  "theme_color": "#cfd0d5",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

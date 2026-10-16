@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tune In">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#cfd0d5">
+<title>Tune In</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="device">
+    <div id="screen-wrap">
+      <div id="screen">
+        <div id="status">
+          <span class="st-l"><span id="st-play"></span><span id="st-sleep"></span></span>
+          <span id="st-title">Tune In</span>
+          <span class="st-r"><span id="st-clock"></span><span id="st-batt"><svg class="pi" viewBox="0 0 9 6" style="width:1.5em" shape-rendering="crispEdges" fill="currentColor"><rect x="0" y="0" width="8" height="1"/><rect x="0" y="5" width="8" height="1"/><rect x="0" y="0" width="1" height="6"/><rect x="7" y="0" width="1" height="6"/><rect x="8" y="2" width="1" height="2"/><rect x="2" y="2" width="4" height="2"/></svg></span></span>
+        </div>
+        <div id="views"></div>
+        <div id="toast"></div>
+        <div id="scan"></div>
+        <div id="flash"></div>
+      </div>
+    </div>
+    <div id="brand"><b>TUNE IN</b><span>8-BIT AUDIO SYSTEM</span></div>
+    <div id="wheel-area">
+      <div id="wheel-shell">
+        <div id="wheel">
+          <span class="wl w-menu">MENU</span>
+          <span class="wl w-prev"><svg class="pi" viewBox="0 0 8 7" shape-rendering="crispEdges" fill="currentColor"><rect x="1" y="0" width="1" height="7"/><rect x="3" y="0" width="1" height="7"/><rect x="7" y="0" width="1" height="7"/><rect x="6" y="1" width="1" height="5"/><rect x="5" y="2" width="1" height="3"/><rect x="4" y="3" width="1" height="1"/></svg></span>
+          <span class="wl w-next"><svg class="pi" viewBox="0 0 8 7" shape-rendering="crispEdges" fill="currentColor"><rect x="0" y="0" width="1" height="7"/><rect x="1" y="1" width="1" height="5"/><rect x="2" y="2" width="1" height="3"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="0" width="1" height="7"/><rect x="6" y="0" width="1" height="7"/></svg></span>
+          <span class="wl w-play"><svg class="pi" viewBox="0 0 12 7" shape-rendering="crispEdges" fill="currentColor"><rect x="0" y="0" width="1" height="7"/><rect x="1" y="1" width="2" height="5"/><rect x="3" y="2" width="2" height="3"/><rect x="5" y="3" width="1" height="1"/><rect x="8" y="0" width="1" height="7"/><rect x="10" y="0" width="1" height="7"/></svg></span>
+          <div id="center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="fullviz">
+    <canvas></canvas>
+    <div class="fv-hud">
+      <div class="fv-track"></div>
+      <div class="fv-mode"></div>
+      <div class="fv-btns">
+        <button data-a="prev" aria-label="Previous style"><svg class="pi" viewBox="0 0 4 7" shape-rendering="crispEdges" fill="currentColor"><rect x="3" y="0" width="1" height="7"/><rect x="2" y="1" width="1" height="5"/><rect x="1" y="2" width="1" height="3"/><rect x="0" y="3" width="1" height="1"/></svg></button>
+        <button data-a="color" aria-label="Colors">COLOR</button>
+        <button data-a="play" aria-label="Play/Pause"></button>
+        <button data-a="skip" aria-label="Next song">SKIP</button>
+        <button data-a="next" aria-label="Next style"><svg class="pi" viewBox="0 0 4 7" shape-rendering="crispEdges" fill="currentColor"><rect x="0" y="0" width="1" height="7"/><rect x="1" y="1" width="1" height="5"/><rect x="2" y="2" width="1" height="3"/><rect x="3" y="3" width="1" height="1"/></svg></button>
+      </div>
+      <button class="fv-close" data-a="close" aria-label="Close">✕</button>
+      <div class="fv-tip">SWIPE ◀ ▶ STYLES · SWIPE ▼ EXIT</div>
+    </div>
+  </div>
+
+  <div id="boot">
+    <div class="boot-logo">
+      <div class="boot-icon"><svg class="pi" viewBox="0 0 12 16" shape-rendering="crispEdges"><rect x="0" y="0" width="12" height="16" fill="var(--fg)"/><rect x="1" y="1" width="10" height="7" fill="var(--lcd)"/><rect x="2" y="2" width="5" height="1" fill="var(--fg)"/><rect x="2" y="4" width="7" height="1" fill="var(--dim)"/><rect x="2" y="6" width="4" height="1" fill="var(--dim)"/><rect x="3" y="9" width="6" height="6" fill="var(--wheel)"/><rect x="2" y="10" width="8" height="4" fill="var(--wheel)"/><rect x="5" y="11" width="2" height="2" fill="var(--center)"/></svg></div>
+      <h1>TUNE<br>IN</h1>
+    </div>
+    <div class="boot-load"><i></i></div>
+    <div class="boot-press">PRESS START</div>
+    <div class="boot-sub">LOADING…</div>
+  </div>
+
+  <div id="rotate"><div>↻</div><p>TURN ME BACK<br>UPRIGHT!</p></div>
+  <input type="file" id="file" accept="audio/*,.mp3,.m4a,.aac,.wav,.flac,.aif,.aiff,.caf" multiple>
+  <label id="haptic" aria-hidden="true"><input type="checkbox" switch></label>
+</div>
+<script src="js/themes.js"></script>
+<script src="js/db.js"></script>
+<script src="js/tags.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/sfx.js"></script>
+<script src="js/viz.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
